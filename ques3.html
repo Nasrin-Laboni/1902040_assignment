@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Country Capital Lookup</title>
+</head>
+<body>
+    <h1>Select a Country</h1>
+    <select id="countrySelect" onchange="showCapital()">
+        <option value="USA">USA</option>
+        <option value="Canada">Canada</option>
+        <option value="UK">UK</option>
+        <option value="Australia">Australia</option>
+        <option value="Japan">Japan</option>
+    </select>
+    <p>Capital: <span id="capitalDisplay"></span></p>
+
+    <script>
+        function showCapital() {
+            const selectElement = document.getElementById('countrySelect');
+            const capitalDisplay = document.getElementById('capitalDisplay');
+
+            const selectedCountry = selectElement.value;
+            let capital;
+
+            switch (selectedCountry) {
+                case 'USA':
+                    capital = 'Washington, D.C.';
+                    break;
+                case 'Canada':
+                    capital = 'Ottawa';
+                    break;
+                case 'UK':
+                    capital = 'London';
+                    break;
+                case 'Australia':
+                    capital = 'Canberra';
+                    break;
+                case 'Japan':
+                    capital = 'Tokyo';
+                    break;
+                default:
+                    capital = '';
+            }
+
+            capitalDisplay.textContent = capital;
+        }
+    </script>
+</body>
+</html>
